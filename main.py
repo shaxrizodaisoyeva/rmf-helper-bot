@@ -45,7 +45,7 @@ warehouse_list = ["Самарканд", "Ташкент"]
 # --- KEYBOARDS ---
 main_menu_keyboard = [
     ["Прайс-Листы", "Лифлеты"],
-    ["Информации лекарств", "Контакты"],
+    ["Информация лекарствах", "Контакты"],
     ["Документы", "Отзывы и предложения"]
 ]
 
@@ -258,7 +258,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(rek, parse_mode="HTML")
 
     # 6. MEDICINE INFO
-    elif text == "Информации лекарств":
+    elif text == "Информация лекарствах":
         await update.message.reply_text("Выберите раздел👇", reply_markup=ReplyKeyboardMarkup([["Сертификаты"], ["Вернуться в главное меню"]], resize_keyboard=True))
     elif text == "Сертификаты":
         await update.message.reply_text("Выберите препарат:", reply_markup=build_indexed_grid(cert_medicine_list, "cert", cols=2))
